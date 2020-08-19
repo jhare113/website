@@ -1,0 +1,68 @@
+---
+title: Running Predictor
+author: James P. Hare
+date: '2020-06-24'
+slug: running-predictor
+categories: []
+tags: []
+---
+
+
+
+<div id="the-model" class="section level2">
+<h2>The Model</h2>
+<p>I have been recording my runs in <a href="https://www.strava.com/">Strava</a> for about five years. I wanted to see if I could use this data to make predictions about my racing pace. I downloaded my data from the website, including a <a href="https://github.com/jamesphare/running_predictor/blob/master/activities.csv">spreadsheet</a> collecting all my activity data (I’ve deleted some data from this file for privacy reasons).</p>
+<p>I spent <a href="https://github.com/jamesphare/running_predictor/blob/master/running_project_notebook.md">some time</a> using visualizations and linear models to determine which variables would provide the most predictive power. I looked into trying to predict both race and non-race paces, and I considered factors including age, distance, elevation gain (both relative and absolute), amount of training, recovery, and season.</p>
+<p>While I have much more data on my overall running than I do on the small number of races that I have run, I found too much variability in my running pace that cannot be explained through these data. Was I taking it easy or doing a workout? Had I eaten breakfast? How hot was it?</p>
+<p>With races, much of this variability no longer applies. In a race, I’m going to try to go as fast as possible and pay attention to proper rest and nutrition, as far as it is under my control.</p>
+<p>After trying out various models, I found the model with the most significance and explanatory power was a simple one that only took into account the length of the race and the amount of training I did over the previous twelve weeks.</p>
+<div id="racing-pace-model" class="section level3">
+<h3>Racing Pace Model</h3>
+<pre><code>## 
+## Call:
+## lm(formula = pace ~ Distance + training, data = races)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -20.537  -7.097   1.153  10.061  20.001 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 342.06054   10.41302  32.849 1.61e-11 ***
+## Distance      2.80869    0.32545   8.630 6.02e-06 ***
+## training     -0.17157    0.03272  -5.243 0.000377 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 13.32 on 10 degrees of freedom
+## Multiple R-squared:  0.8875, Adjusted R-squared:  0.865 
+## F-statistic: 39.46 on 2 and 10 DF,  p-value: 1.8e-05</code></pre>
+</div>
+<div id="analysis-of-variance-table" class="section level3">
+<h3>Analysis of Variance Table</h3>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: pace
+##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## Distance   1 9122.4  9122.4  51.421 3.029e-05 ***
+## training   1 4876.8  4876.8  27.489 0.0003772 ***
+## Residuals 10 1774.1   177.4                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+<div id="confidence-intervals" class="section level3">
+<h3>Confidence Intervals</h3>
+<pre><code>##                   2.5 %       97.5 %
+## (Intercept) 318.8588806 365.26219053
+## Distance      2.0835409   3.53383942
+## training     -0.2444886  -0.09866009</code></pre>
+<p>This simple model explains much of the variability in my racing pace with a fairly high degree of confidence. It seems that how much I train for a race does indeed have a direct and measurable impact on my performance. Adjusting for the length of the race, every kilometer I run in the twelve weeks prior to the race results in an improvement of .17 seconds per kilometer (with a 95% confidence interval between .10 and .24 seconds).</p>
+</div>
+</div>
+<div id="the-tool" class="section level2">
+<h2>The Tool</h2>
+<p>With this model, it’s a simple task to craft a tool that allows me to predict my race pace based on the length of the race and how much I’ve trained.</p>
+<p>In this case the tool is a <a href="https://github.com/jamesphare/running_predictor/blob/master/running_predictor/app.R">Shiny app</a>. For now, this app is very simple. The user simply enters the length of the race in either kilometers or miles and the distance I’ve trained in the preceding twelve weeks, and the app returns a predicted race time and pace.</p>
+<p>The next steps are to enable the app to communicate uncertainty by adding (and perhaps visualizing) confidence intervals.</p>
+<p>The source code for this project is available on <a href="https://github.com/jamesphare/running_predictor">GitHub</a>.</p>
+</div>

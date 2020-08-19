@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "A Hugo website"
+title = "jamesphare.org"
 theme = "hugo-lithium"
 googleAnalytics = ""
 disqusShortname = ""
@@ -13,11 +13,23 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     name = "About"
     url = "/about/"
 [[menu.main]]
+    name = "Writing & Editing"
+    url = "/writing-editing/"
+[[menu.main]]
+    name = "Research"
+    url = "/research/"
+[[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+[[menu.main]]
     name = "GitHub"
-    url = "https://github.com/rstudio/blogdown"
+    url = "https://github.com/jamesphare"
 [[menu.main]]
     name = "Twitter"
-    url = "https://twitter.com/rstudio"
+    url = "https://twitter.com/ProsccoSocialst"
+[[menu.main]]
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/jphare/"
 
 [params]
     description = "A website built through Hugo and blogdown."
