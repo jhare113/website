@@ -4,7 +4,7 @@ author: James P. Hare
 date: '2020-08-19'
 ---
 
-james@jamesphare.org
+[james@jamesphare.org](mailto:james@jamesphare.org)
 
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
