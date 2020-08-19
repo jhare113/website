@@ -1,5 +1,5 @@
 ---
-title: "Research"
+title: 'Research'
 author: 'James P. Hare'
 date: '2020-08-19'
 ---
