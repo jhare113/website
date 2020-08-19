@@ -1,6 +1,6 @@
 ---
-title: "Writing & Editing"
-author: 'James P. Hare'
+title: Writing & Editing
+author: James P. Hare
 date: '2020-08-19'
 ---
 
