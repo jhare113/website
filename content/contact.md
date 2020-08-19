@@ -1,6 +1,9 @@
 ---
-title: "Contact"
+title: Contact
+author: James P. Hare
+date: '2020-08-19'
 ---
+
 james@jamesphare.org
 
 [Public PGP Key](http://keyserver2.computer42.org/pks/lookup?op=get&search=0x1886888288C2ADFF)

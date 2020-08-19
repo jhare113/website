@@ -3,6 +3,7 @@ title: Research
 author: James P. Hare
 date: '2020-08-19'
 ---
+
 My academic research explored the development of modern Hinduism in colonial and pre-colonial South Asia. I was awarded a PhD in Religion by Columbia University in 2011. I still hope to revise my [dissertation](https://doi.org/10.7916/D8VH5TN9) for publication. My dissertation focuses on Nābhādās’ *Bhaktamāl* (Garland of Devotees). This late sixteenth- or early seventeenth-century collection of hagiographies praises the qualities of hundreds of devotees and thereby sets the boundaries of a devotional community far exceeding the sectarian context of its author. By closely examining the *Bhaktamāl*, along with its commentaries, manuscripts, and print editions, my dissertation traces crucial aspects of how modern Hinduism developed from the early seventeenth century until the beginning of the twentieth. The *Bhaktamāl* has, since the time of its composition, remained a prominent locus of dispute over the boundaries and logic of the broad-based devotional community that we now know as Hinduism.
 
 ## Scholarly Publications

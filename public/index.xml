@@ -6,7 +6,7 @@
     <description>Recent content on jamesphare.org</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,21 +22,22 @@ Prior to moving to Georgia, I spent five years as a project manager at the Rosa 
     </item>
     
     <item>
+      <title>Contact</title>
+      <link>/contact/</link>
+      <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/contact/</guid>
+      <description>james@jamesphare.org
+Public PGP Key PGP Fingerprint: B53C B380 1A5D 97EB 1768 4E67 1886 8882 88C2 ADFF</description>
+    </item>
+    
+    <item>
       <title>Research</title>
       <link>/research/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>/research/</guid>
       <description>My academic research explored the development of modern Hinduism in colonial and pre-colonial South Asia. I was awarded a PhD in Religion by Columbia University in 2011. I still hope to revise my dissertation for publication. My dissertation focuses on Nābhādās’ Bhaktamāl (Garland of Devotees). This late sixteenth- or early seventeenth-century collection of hagiographies praises the qualities of hundreds of devotees and thereby sets the boundaries of a devotional community far exceeding the sectarian context of its author.</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/2020/08/19/test/</link>
-      <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/08/19/test/</guid>
-      <description>test</description>
     </item>
     
     <item>
@@ -116,16 +117,6 @@ I spent some time using visualizations and linear models to determine which vari
       <guid>/2020/06/21/covid-19-in-metro-atlanta/</guid>
       <description>Early on in the pandemic, I became frustrated by the lack of quality visualizations of local COVID-19 data, particularly concerning Metro Atlanta, where I live, so I set out to create a set of visualizations of these data. Since then, the situation has improved greatly, but these plots still provide some details and comparisons that I have not seen elsewhere.
 The first item I set out to create is an Rmarkdown document focused on Metro Atlanta that visualizes the distribution of cases and deaths as they change over time.</description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/contact/</guid>
-      <description>james@jamesphare.org
-Public PGP Key PGP Fingerprint: B53C B380 1A5D 97EB 1768 4E67 1886 8882 88C2 ADFF</description>
     </item>
     
   </channel>
