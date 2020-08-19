@@ -13,5 +13,3 @@ My academic research explored the development of modern Hinduism in colonial and
 “Contested Communities and the Re-imagination of Nabhadas’ Bhaktamāl,” *Time, History, and the Religious Imaginary in South Asia*, Ed. Anne Murphy, New York: Routledge, 2011.
 
 “A Contested Community: Priyādās and the Re-imagining of Nābhādās’s Bhaktamāl,” *Sikh Formations: Religion, Culture, Theory* 3.2 (2007): 185-198.
-
-
