@@ -6,7 +6,7 @@
     <description>Recent content on jamesphare.org</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -28,6 +28,15 @@ Prior to moving to Georgia, I spent five years as a project manager at the Rosa 
       
       <guid>/research/</guid>
       <description>My academic research explored the development of modern Hinduism in colonial and pre-colonial South Asia. I was awarded a PhD in Religion by Columbia University in 2011. I still hope to revise my dissertation for publication. My dissertation focuses on Nābhādās’ Bhaktamāl (Garland of Devotees). This late sixteenth- or early seventeenth-century collection of hagiographies praises the qualities of hundreds of devotees and thereby sets the boundaries of a devotional community far exceeding the sectarian context of its author.</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/2020/08/19/test/</link>
+      <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/08/19/test/</guid>
+      <description>test</description>
     </item>
     
     <item>

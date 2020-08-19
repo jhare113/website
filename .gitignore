@@ -26,5 +26,3 @@ vignettes/*.pdf
 *.knit.md
 # R Environment Variables
 .Renviron
-#Public directory
-public/**/*
