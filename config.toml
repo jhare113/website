@@ -1,4 +1,4 @@
-baseurl = "jamesphare.org/"
+baseurl = "https://jamesphare.org/"
 languageCode = "en-us"
 title = "jamesphare.org"
 theme = "hugo-lithium"
@@ -39,7 +39,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     weight = 7
 
 [params]
-    description = "A website built through Hugo and blogdown."
+    description = "James P. Hare's personal website"
 
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.12.0"
