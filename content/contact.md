@@ -4,7 +4,17 @@ author: James P. Hare
 date: '2020-08-19'
 ---
 
-[james@jamesphare.org](mailto:james@jamesphare.org)
+## Email and Social Media
+
+[Email](mailto:james@jamesphare.org)
+
+[GitHub](https://github.com/jamesphare/)
+
+[LinkedIn](https://www.linkedin.com/in/jphare/)
+
+[Twitter](https://twitter.com/ProsccoSocialst)
+
+## PGP Public Key
 
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
