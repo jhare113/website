@@ -27,4 +27,5 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 #Public folder
-/public
+public
+blogdown
