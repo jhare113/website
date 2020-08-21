@@ -59,4 +59,4 @@ Certainly, other forms of inequality also contribute to a greater risk of contra
 
 This pandemic has brought so many facets of U.S. society into sharp relief. In DeKalb, in Georgia, in the United States, and throughout the world, we’re all feeling the effects of this crisis, but we’re not feeling them equally.
 
-For more details on my methodology or to check out my code, visit [my GitHub page](https://github.com/jamesphare/metro_atlanta_covid/blob/master/DeKalb_by_Zip.md).
+For more details on my methodology or to check out my code, visit [my GitHub page](https://github.com/jamesphare/metro_atlanta_covid/blob/52ae7515cac6e98a20d8b3c002ae88b28ce7f46e/DeKalb_by_Zip.md).

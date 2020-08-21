@@ -163,4 +163,4 @@ The same pattern of misconduct holds whether the officer in question is a man or
 
 The data analyzed here are limited and partial, but they corroborate what Black New Yorkers, other New Yorkers of color, and their white allies already know from experience: the NYPD is a profoundly racist institution, not because of a few bad apples, but on a structural level.
 
-All code is available on [GitHub](https://github.com/jamesphare/nypd_allegations/).
+All code is available on [GitHub](https://github.com/jamesphare/nypd_allegations/tree/1a9e6923138569a682e4e08fe440cf20b22ea84d).
