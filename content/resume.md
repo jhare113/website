@@ -4,7 +4,8 @@ author: James P. Hare
 date: '2020-08-21'
 ---
 
-# JAMES P. HARE  
+# JAMES P. HARE
+
 ## EXPERIENCE
 
 ### 2018
