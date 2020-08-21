@@ -1,10 +1,8 @@
 ---
-title: CV
+title: JAMES P. HARE
 author: James P. Hare
 date: '2020-08-21'
 ---
-
-# JAMES P. HARE
 
 ## EXPERIENCE
 
