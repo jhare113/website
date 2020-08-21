@@ -7,11 +7,12 @@ categories: []
 tags: []
 ---
 
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <div id="the-model" class="section level2">
 <h2>The Model</h2>
-<p>I have been recording my runs in <a href="https://www.strava.com/">Strava</a> for about five years. I wanted to see if I could use this data to make predictions about my racing pace. I downloaded my data from the website, including a <a href="https://github.com/jamesphare/running_predictor/blob/master/activities.csv">spreadsheet</a> collecting all my activity data (I’ve deleted some data from this file for privacy reasons).</p>
+<p>I have been recording my runs in <a href="https://www.strava.com/">Strava</a> for about five years. I wanted to see if I could use this data to make predictions about my racing pace. I downloaded my data from the website, including a <a href="https://github.com/jamesphare/running_predictor/blob/7a2b8b30e0640fd0a661371918085aaed53ad5c0/activities.csv">spreadsheet</a> collecting all my activity data (I’ve deleted some data from this file for privacy reasons).</p>
 <p>I spent <a href="https://github.com/jamesphare/running_predictor/blob/master/running_project_notebook.md">some time</a> using visualizations and linear models to determine which variables would provide the most predictive power. I looked into trying to predict both race and non-race paces, and I considered factors including age, distance, elevation gain (both relative and absolute), amount of training, recovery, and season.</p>
 <p>While I have much more data on my overall running than I do on the small number of races that I have run, I found too much variability in my running pace that cannot be explained through these data. Was I taking it easy or doing a workout? Had I eaten breakfast? How hot was it?</p>
 <p>With races, much of this variability no longer applies. In a race, I’m going to try to go as fast as possible and pay attention to proper rest and nutrition, as far as it is under my control.</p>
@@ -64,5 +65,5 @@ tags: []
 <p>With this model, it’s a simple task to craft a tool that allows me to predict my race pace based on the length of the race and how much I’ve trained.</p>
 <p>In this case the tool is a <a href="https://github.com/jamesphare/running_predictor/blob/master/running_predictor/app.R">Shiny app</a>. For now, this app is very simple. The user simply enters the length of the race in either kilometers or miles and the distance I’ve trained in the preceding twelve weeks, and the app returns a predicted race time and pace.</p>
 <p>The next steps are to enable the app to communicate uncertainty by adding (and perhaps visualizing) confidence intervals.</p>
-<p>The source code for this project is available on <a href="https://github.com/jamesphare/running_predictor">GitHub</a>.</p>
+<p>The source code for this project is available on <a href="https://github.com/jamesphare/running_predictor/tree/7a2b8b30e0640fd0a661371918085aaed53ad5c0">GitHub</a>.</p>
 </div>
