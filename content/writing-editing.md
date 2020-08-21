@@ -20,7 +20,7 @@ date: '2020-08-19'
 
 “[Politics in the Shadow](https://gahistoricnewspapers.galileo.usg.edu/lccn/sn94029049/2000-07-19/ed-1/seq-9/),” *The Flagpole*, Athens, GA, July 19, 2000.
 
-(For my scholarly publications, please visit my [research](https://jamesphare.org/research/) page.)
+(For my scholarly publications, please visit my [research](/research/) page.)
 
 ## Editing
 
