@@ -1,0 +1,3 @@
+/content/post/*.html linguist-documentation
+/themes/hugo-lithium/layouts/partials/*.html linguist-documentation
+/themes/hugo-lithium/layouts/_default/*.html linguist-documentation
