@@ -12,7 +12,7 @@ date: '2020-08-19'
 
 [LinkedIn](https://www.linkedin.com/in/jphare/)
 
-[Twitter](https://twitter.com/ProsccoSocialst)
+[Twitter](https://twitter.com/James_P_Hare)
 
 ## PGP Public Key
 
