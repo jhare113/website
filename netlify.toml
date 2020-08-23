@@ -8,8 +8,8 @@
   HUGO_ENABLEGITINFO = "true"
   
 [[redirects]]
-  from = "https://jamesphare.org/blog"
-  to = "https://jamesphare.org/"
+  from = "/blog"
+  to = "/"
   status = 301
-  force = true
-  query = {id = ":id"}
+  force = false
+  query = {path = ":path"}
