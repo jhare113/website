@@ -2,7 +2,7 @@
 title: COVID-19 in DeKalb County, Georgia
 author: James P. Hare
 date: '2020-07-10'
-slug: covid-19-in-dekalb-county-georgia
+slug: covid-19-in-dekalb
 categories: []
 tags: []
 ---
