@@ -6,7 +6,7 @@ date: '2020-08-19'
 
 ## Selected Publications
 
-"[Suppressing Democracy: The Attack on Voting Rights in Georgia](https://www.rosalux.de/en/news/id/42843/suppressing-democracy?cHash=2c80a49b61c174ecd9e94be69641f097)," Rosa Luxemburg Stiftung, August 2020. (Also available in [German translation](https://www.rosalux.de/news/id/42843?cHash=2c80a49b61c174ecd9e94be69641f097))
+"[Suppressing Democracy: The Attack on Voting Rights in Georgia](https://www.rosalux.de/en/news/id/42843/suppressing-democracy?cHash=2c80a49b61c174ecd9e94be69641f097)," Rosa Luxemburg Stiftung, August 2020. Also available in [German translation](https://www.rosalux.de/news/id/42843?cHash=2c80a49b61c174ecd9e94be69641f097).
 
 “[Strategies Against the Far Right: Reporting Back and Moving Forward](http://www.rosalux-nyc.org/strategies-against-the-far-right/),” Rosa Luxemburg Stiftung–New York Office, August 2017.
 
