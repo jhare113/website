@@ -6,6 +6,9 @@ date: '2020-08-21'
 
 ## EXPERIENCE
 
+### 2017 -- 2020
+**Freelance Editor and Writer**
+
 ### 2018
 **Part-time Instructor**  
 **Georgia State University**  
