@@ -13,7 +13,7 @@ output: github_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE)
 
 # Load necessary packages
 
@@ -25,7 +25,7 @@ library(modelr)
 # Import the data set
 
 activities <- read_csv(
-  "/Users/james/Documents/2020/running_predictor/activities.csv",
+  "~/Documents/2020/running_predictor/activities.csv",
   col_types = cols(
     `Activity ID` = col_double(),
     `Activity Date` = col_character(),

@@ -7,17 +7,17 @@ categories: []
 tags: []
 ---
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, cache = TRUE)
 
 
 library(tidyverse)
 library(sf)
 
 #Police precinct map from NYC Open Data https://data.cityofnewyork.us/Public-Safety/Police-Precincts/78dh-3ptz#revert
-nyc_precincts <- read_sf("/Users/james/Documents/2020/nypd_allegations/data/Police Precincts/geo_export_cfbe857e-58ec-4848-b99b-1f33fd967621.shp")
+nyc_precincts <- read_sf("~/Documents/2020/nypd_allegations/data/Police Precincts/geo_export_cfbe857e-58ec-4848-b99b-1f33fd967621.shp")
 
 #Alleged misconduct from ProPublica
-allegations <- read_csv("/Users/james/Documents/2020/nypd_allegations/data/allegations_20200726939.csv")
+allegations <- read_csv("~/Documents/2020/nypd_allegations/data/allegations_20200726939.csv")
 
 #Let's limit this to substantiated allegations
 allegations <- allegations %>%
