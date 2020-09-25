@@ -222,4 +222,4 @@ everest_o2 %>%
 
 Trips to the summit of Everest have overwhelmingly involved the use of supplemental oxygen.
 
-That's all for now. Take a look at my code on [GitHub](https://github.com/jamesphare/tidytuesday/blob/869ae09e83ad28d6f371f2ae9c22ff1cf630491e/20200922/Himalayan.Rmd).
+That's all for now. Take a look at my code on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2020-09-25-tidy-everest.Rmd).
