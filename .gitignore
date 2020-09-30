@@ -29,3 +29,4 @@ vignettes/*.pdf
 #Public folder
 public
 blogdown
+..gitattributes.swp
