@@ -62,7 +62,7 @@ datasaurus %>%
         ggplot(aes(x, y, color = dataset)) +
         geom_point() +
         geom_smooth(method = "lm", formula = y ~ x) +
-        theme(legend.position = 0)
+        theme(legend.position = "none")
 ```
 
 The models match up nicely, but there's a lot of noise and there seem to be some strong unexplained patterns in the underlying data. Let's look at each data set individually.
