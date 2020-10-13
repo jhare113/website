@@ -33,14 +33,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     name = "CV"
     url = "/resume/"
     weight = 6
-[[menu.main]]
-    name = "GitHub"
-    url = "https://github.com/jamesphare/"
-    weight = 6
-[[menu.main]]
-    name = "LinkedIn"
-    url = "https://www.linkedin.com/in/jphare/"
-    weight = 7
 
 [params]
     description = "James P. Hare's personal website"
