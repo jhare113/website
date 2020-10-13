@@ -29,7 +29,7 @@ unique(datasaurus$dataset)
 
 We have 1,846 sets of x and y coordinates divided up into thirteen descriptive data sets. 
 
-```{r}
+```{r, message = FALSE}
 datasaurus %>%
         group_by(dataset) %>% 
         summarize(Mean_X = mean(x),
