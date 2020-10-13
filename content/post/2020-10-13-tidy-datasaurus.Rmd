@@ -1,0 +1,98 @@
+---
+title: Tidy Datasaurus
+author: James P. Hare
+date: '2020-10-13'
+slug: tidy-datasaurus
+categories: []
+tags: []
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(broom)
+library(gridExtra)
+
+theme_set(theme_void())
+
+datasaurus <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-10-13/datasaurus.csv')
+```
+
+This week's [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-10-13/readme.md) speaks to the importance of visualization in data exploration. [Alberto Cairo](http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html) created this simulated data set in order to demonstrate how misleading summary statistics can be and to show how useful visualization is in uncovering patterns in data. In this spirit, let's start exploring this data set to see what we find.  
+
+```{r}
+glimpse(datasaurus)
+summary(datasaurus)
+unique(datasaurus$dataset)
+```
+
+We have 1,846 sets of x and y coordinates divided up into thirteen descriptive data sets. 
+
+```{r}
+datasaurus %>%
+        group_by(dataset) %>% 
+        summarize(Mean_X = mean(x),
+                  Mean_Y = mean(y),
+                  SD_X = sd(x),
+                  SD_Y = sd(y),
+                  Corr = cor(x, y)
+                  )
+        
+```
+
+These data sets have a lot in common. Specifically the x and y means, x and y standard deviations, and Pearson's correlation coefficients are nearly identical.
+
+Let's try fitting each data set to a linear model.
+
+```{r}
+datasaurus %>%
+        nest(data = -dataset) %>% 
+        mutate(model = map(data, ~ lm(y ~ x, data = .)),
+               tidied = map(model, tidy)
+        ) %>% 
+        unnest(tidied) %>% 
+        select(-data, -model)
+```
+
+The intercept, slope and standard errors are all pretty much identical. Let's plot these models and take a look.
+
+```{r}
+datasaurus %>% 
+        ggplot(aes(x, y, color = dataset)) +
+        geom_point() +
+        geom_smooth(method = "lm", formula = y ~ x) +
+        theme(legend.position = 0)
+```
+
+The models match up nicely, but there's a lot of noise and there seem to be some strong unexplained patterns in the underlying data. Let's look at each data set individually.
+
+```{r}
+dino <- datasaurus %>%
+        filter(dataset == "dino") %>%
+        ggplot(aes(x, y)) +
+        geom_point() +
+        theme(legend.position = "none") +
+        labs(title = "Each of These Plots Has Nearly Identical Summary Statistics",
+             subtitle = "Visualization is an essential component of data exploration",
+             caption = "")
+
+
+dozen <- datasaurus %>%
+        filter(dataset != "dino") %>%
+        ggplot(aes(x, y, color = dataset)) +
+        geom_point() +
+        facet_wrap( ~ dataset) +
+        theme(legend.position = "none",
+              strip.text = element_blank())+
+        labs(title = "",
+             subtitle = "",
+             caption = "Simulated Data: Alberto Cairo")
+
+
+grid.arrange(dino, dozen, ncol = 2)
+```
+
+These plots are much more different than the summary statisitcs would suggest!
+
+That's all for this week. Check out the code on [GitHub](https://github.com/jamesphare/tidytuesday/blob/master/20201013/datasaurus.rmd).
