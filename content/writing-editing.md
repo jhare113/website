@@ -5,7 +5,7 @@ date: '2020-08-19'
 ---
 ## Selected Publications
 
-"[As Goes Georgia: What Is at Stake in the Runoff Elections](https://rosalux.nyc/as-goes-georgia/)," Rosa Luxemburg Stiftung, December 2020.
+"[As Goes Georgia: What Is at Stake in the Runoff Elections](https://rosalux.nyc/as-goes-georgia/)," Rosa Luxemburg Stiftung, December 2020. Also available in [German translation](https://rosalux.nyc/de/an-wen-geht-georgia-was-bei-den-stichwahlen-auf-dem-spiel-steht/).
 
 "[Suppressing Democracy: The Attack on Voting Rights in Georgia](https://www.rosalux.de/en/news/id/42843/suppressing-democracy)," Rosa Luxemburg Stiftung, August 2020. Also available in [German translation](https://www.rosalux.de/news/id/42843).
 
