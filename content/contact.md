@@ -3,7 +3,6 @@ title: Contact
 author: James P. Hare
 date: '2020-08-19'
 ---
-
 ## Email and Social Media
 
 [Email](mailto:james@jamesphare.org)
