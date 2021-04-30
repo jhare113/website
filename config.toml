@@ -29,10 +29,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     name = "Blog"
     url = "/"
     weight = 5
-[[menu.main]]
-    name = "CV"
-    url = "/resume/"
-    weight = 6
 
 [params]
     description = "James P. Hare's personal website"
