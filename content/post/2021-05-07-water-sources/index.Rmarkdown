@@ -1,0 +1,52 @@
+---
+title: Water Sources
+author: James P. Hare
+date: '2021-05-07'
+slug: water-sources
+categories: []
+tags: []
+draft: TRUE
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+
+library(tidyverse)
+library(leaflet)
+library(htmltools)
+
+water <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-05-04/water.csv')
+```
+
+```{r wrangle}
+water_madagascar <- water %>% 
+        filter(country_name == "Madagascar")
+
+#create popup content
+content <- paste(
+        sep = "",
+        "Report Date: ",
+        htmlEscape(water_madagascar$report_date), "<br>",
+        "Water Source: ",
+        htmlEscape(water_madagascar$water_source), "<br>",
+        "Tech: ",
+        htmlEscape(water_madagascar$water_tech), "<br>",
+        "Install Year: ",
+        htmlEscape(water_madagascar$install_year), " <br>",
+        "Installer: ",
+        htmlEscape(water_madagascar$installer), "<br>",
+        "Status: ",
+        htmlEscape(water_madagascar$status))
+```
+
+
+```{r map}
+leaflet(data = water_madagascar) %>% 
+        addTiles() %>% #OpenStreetMap base map
+        addTiles(attribution = "Source: Water Point Data Exchange") %>% 
+        addMarkers(lat = ~lat_deg, lng = ~lon_deg,
+                   clusterOptions = markerClusterOptions(),
+                   popup = ~content)
+```
+
+This week's [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-05-04/readme.md) uses data from Water Point Data Exchange, which gathers water point data 
