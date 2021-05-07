@@ -1,8 +1,8 @@
 ---
-title: ''
+title: Suppressing Democracy
 author: James P. Hare
 date: '2020-08-21'
-slug: ''
+slug: suppressing-democracy
 categories: []
 tags: []
 ---
