@@ -27,6 +27,11 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 #Public folder
-public
-blogdown
+/public
+/blogdown
 ..gitattributes.swp
+#check_gitignore
+.DS_Store
+Thumbs.db
+/public/
+/resources/
