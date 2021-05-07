@@ -73,4 +73,4 @@ Now let's take a look at "the general trends in solo expeditions and the use of 
 
 Trips to the summit of Everest have overwhelmingly involved the use of supplemental oxygen.
 
-That's all for now. Take a look at my code on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2020-09-25-tidy-everest.Rmd).
+That's all for now. Take a look at my code on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2020-09-25-everest/index.Rmarkdown).

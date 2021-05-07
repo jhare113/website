@@ -7,6 +7,133 @@ categories: []
 tags: []
 ---
 
-![](/post/2020-09-15-tidy-kids_files/map-1.png)
+This week's [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/275a2313a8d8536cb6d43d9fcb2ee232a792b22c/data/2020/2020-09-15/readme.md) takes a look the Urban Institute's data on public spending on children from 1997 to 2016. I decided to narrow my focus to pre-k to 12 education spending and to look at the percentage change over this period in per-child spending, adjusted for inflation. This information would probably be best suited to a bar plot, but I wanted to learn how to make hex tile maps! Check out my [source code on Github](https://github.com/jamesphare/website/blob/master/content/post/2020-09-15-tidy-kids/index.Rmarkdown).
 
-This week's [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/275a2313a8d8536cb6d43d9fcb2ee232a792b22c/data/2020/2020-09-15/readme.md) takes a look the Urban Institute's data on public spending on children from 1997 to 2016. I decided to narrow my focus to pre-k to 12 education spending and to look at the percentage change over this period in per-child spending, adjusted for inflation. This information would probably be best suited to a bar plot, but I wanted to learn how to make hex tile maps! Check out my [source code on Github](https://github.com/jamesphare/tidytuesday/blob/a17ce5299121e0eca98e5a030b17d9e7ac09a45c/20200915/kids.md).
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE,
+                      cache = TRUE)
+
+library(tidyverse)
+library(tilemaps)
+library(sf)
+
+kids <-
+  readr::read_csv(
+    'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-15/kids.csv',
+    col_types = cols(
+      state = col_character(),
+      variable = col_character(),
+      year = col_factor(),
+      raw = col_double(),
+      inf_adj = col_double(),
+      inf_adj_perchild = col_double()
+    )
+  )
+```
+
+```{r wrangle}
+PK12_spending <- kids %>%
+  filter(variable == "PK12ed") %>%
+  group_by(state) %>%
+  mutate(percentage_change = (((inf_adj_perchild[year == 2016] - inf_adj_perchild[year == 1997]) /
+                                 inf_adj_perchild[year == 1997]
+  ) * 100)) %>%
+  select(state, percentage_change)
+
+#modify code from https://github.com/kaerosen/tilemaps/blob/master/data-raw/governors.R to include DC
+#rewrite code to Tidyverse style
+states <- spData::us_states[, c("NAME", "geometry")] %>%
+  arrange(NAME) %>%
+  mutate(
+    abbreviation =   c(
+      "AL",
+      "AZ",
+      "AR",
+      "CA",
+      "CO",
+      "CT",
+      "DE",
+      "DC",
+      "FL",
+      "GA",
+      "ID",
+      "IL",
+      "IN",
+      "IA",
+      "KS",
+      "KY",
+      "LA",
+      "ME",
+      "MD",
+      "MA",
+      "MI",
+      "MN",
+      "MS",
+      "MO",
+      "MT",
+      "NE",
+      "NV",
+      "NH",
+      "NJ",
+      "NM",
+      "NY",
+      "NC",
+      "ND",
+      "OH",
+      "OK",
+      "OR",
+      "PA",
+      "RI",
+      "SC",
+      "SD",
+      "TN",
+      "TX",
+      "UT",
+      "VT",
+      "VA",
+      "WA",
+      "WV",
+      "WI",
+      "WY"
+    )
+  ) %>%
+  sf::st_transform(3857) %>%
+  mutate(tile_map = generate_map(geometry, square = FALSE, flat_topped = TRUE))
+
+states <- states %>%
+  add_row(
+    NAME = "Alaska",
+    abbreviation = "AK",
+    tile_map = create_island(states$tile_map, "lower left")
+  ) %>%
+  add_row(
+    NAME = "Hawaii",
+    abbreviation = "HI",
+    tile_map = create_island(states$tile_map, c(-12050000, 3008338))
+  ) %>%
+  arrange(NAME)
+
+states <- states %>%
+  left_join(PK12_spending, by = c("NAME" = "state"))
+
+remove(kids)
+remove(PK12_spending)
+```
+
+```{r map}
+ggplot(states) +
+  geom_sf(aes(geometry = tile_map, fill = percentage_change)) +
+  geom_sf_text(
+    aes(geometry = tile_map, label = abbreviation),
+    fun.geometry = function(x)
+      st_centroid(x)
+  ) +
+  labs(title = "Percentage Change in Pre-K to 12 Education Spending\nper Child by State from 1997 to 2016",
+       caption = "Adjusted for inflation\nSource: Urban Institute",
+       fill = "Percentage Change") +
+  scale_fill_viridis_b() +
+  theme_void() +
+  theme(legend.position = "bottom")
+```

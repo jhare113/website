@@ -15,4 +15,4 @@ This week's [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/m
                
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
-Source code available on [GitHub](https://github.com/jamesphare/tidytuesday/blob/master/20201027/wind_turbines.Rmd).
+Source code available on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2020-10-27-canadian-wind-turbines/index.Rmarkdown).

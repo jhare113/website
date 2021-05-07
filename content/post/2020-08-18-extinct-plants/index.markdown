@@ -27,4 +27,4 @@ Finally, the causes of these extinctions are mainly habitat destruction for agri
 
 While Madagascar's unique flora have faced and continue to face many threats, it's hard to look at these data and not see the profound damage caused by the French colonial regime's export-driven agricultural policies.
 
-As usual, my code is available on [GitHub](https://github.com/jamesphare/tidytuesday/blob/4558c9e0535d177b7e60483d4f4cdaf23f235532/20200818/extinct_plants.Rmd).
+As usual, my code is available on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2020-08-18-extinct-plants/index.Rmarkdownd).

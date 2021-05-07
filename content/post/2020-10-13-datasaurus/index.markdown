@@ -90,4 +90,4 @@ The models match up nicely, but there's a lot of noise and there seem to be some
 
 These plots are much more different than the summary statisitcs would suggest!
 
-That's all for this week. Check out the code on [GitHub](https://github.com/jamesphare/tidytuesday/blob/master/20201013/datasaurus.rmd).
+That's all for this week. Check out the code on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2020-10-13-datasaurus/index.Rmarkdown).
