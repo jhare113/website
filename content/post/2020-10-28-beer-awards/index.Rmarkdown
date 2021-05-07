@@ -72,4 +72,4 @@ ggplot(state_beer_awards) +
         )
 ```
 
-Source code on [GitHub](https://github.com/jamesphare/tidytuesday/blob/master/20201020/beer_awards.Rmd).
+Source code on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2020-10-28-beer-awards/index.Rmarkdown).

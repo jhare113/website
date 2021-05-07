@@ -21,4 +21,4 @@ I'm not sure if counting medals---whether or not we adjust for population---is t
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
-Source code on [GitHub](https://github.com/jamesphare/tidytuesday/blob/master/20201020/beer_awards.Rmd).
+Source code on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2020-10-28-beer-awards/index.Rmarkdown).
