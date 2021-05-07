@@ -1,8 +1,8 @@
 ---
-title: Tidy Beer Awards
+title: Beer Awards
 author: James P. Hare
 date: '2020-10-28'
-slug: tidy-beer-awards
+slug: beer-awards
 categories: []
 tags: []
 ---

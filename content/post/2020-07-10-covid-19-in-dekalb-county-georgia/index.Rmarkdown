@@ -2,10 +2,11 @@
 title: COVID-19 in DeKalb County, Georgia
 author: James P. Hare
 date: '2020-07-10'
-slug: covid-19-in-dekalb
+slug: covid-19-in-dekalb-county-georgia
 categories: []
 tags: []
 ---
+
 So this post may be something of a cautionary tale about getting ahead of yourself when it comes to analyzing data. The [DeKalb County Board of Health](https://www.dekalbhealth.net/covid-19dekalb/) releases numbers on the spread of COVID-19 in the county, most recently on July 6. Included with these data is a breakdown of the county’s 7,043 cases by ZIP Code. It is immediately apparent that while this disease has affected the entire county, its effects have not been felt evenly.
 
 It is difficult not to speculate on the causes of this variation. Have the policies of local governments prevented or exacerbated outbreaks? Has the politicization of mask wearing and social distancing led to increased spread in more conservative areas? Have certain communities had more access to testing resources—or chosen to get tested more often—than others? Are higher density areas more likely to see outbreaks than more suburban areas of the county?
