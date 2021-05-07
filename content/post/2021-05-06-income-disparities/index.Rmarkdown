@@ -16,7 +16,8 @@ library(plotly)
 
 #import data
 income_mean <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-02-09/income_mean.csv')
-income_mean_high <- readr::read_csv('/home/james/Documents/2021/tidytuesday/20210209_wealth_income/Data/EPI Data Library - Wages for Top 1.0, 0.1 and Bottom 90.csv')
+#get data from EPI https://www.epi.org/data/#?subject=wagegroup
+income_mean_high <- readr::read_csv('data/epi_wages_data.csv')
 ```
 
 ```{r prepare}
@@ -198,4 +199,4 @@ ggplotly(income_plot, tooltip = "text") %>%
         )
 
 ```
-The code is available in my [GitHub repository](https://github.com/jamesphare/tidytuesday/blob/master/20210209_wealth_income/wealth_income.rmd).
+The code is available in my [GitHub repository](https://github.com/jamesphare/website/blob/master/content/post/2021-05-06-income-disparities/index.Rmarkdown).
