@@ -5,7 +5,6 @@ date: '2021-05-07'
 slug: water-sources
 categories: []
 tags: []
-draft: TRUE
 ---
 
 ```{r setup, include = FALSE}
@@ -49,4 +48,8 @@ leaflet(data = water_madagascar) %>%
                    popup = ~content)
 ```
 
-This week's [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-05-04/readme.md) uses data from Water Point Data Exchange, which gathers water point data 
+This week's [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-05-04/readme.md) uses data from [Water Point Data Exchange](https://data.waterpointdata.org/dataset/Water-Point-Data-Exchange-WPDx-Basic-/jfkt-jmqa), an organization which gathers water point data from various sources with the goal of improving water access for millions of people.
+
+This week I decided to take a different approach than usual and not use [ggplot2](https://ggplot2.tidyverse.org/). Instead, I used [Leaflet](https://leafletjs.com/) to create an interactive map of water sources in Madagascar with information about each source visible as a popup.
+
+Source code available on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2021-05-07-water-sources/index.Rmarkdown).
