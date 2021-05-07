@@ -11,6 +11,6 @@ tags: []
 
 
 
-Inspired by [Cameron Blevins'](https://twitter.com/historying) visualization (and using his data) I created this Tidy Tuesday entry, my first animated plot. Code available in my [GitHub repository](https://github.com/jamesphare/tidytuesday/blob/master/20210413/post_offices.rmd).
+Inspired by [Cameron Blevins'](https://twitter.com/historying) visualization (and using his data) I created this Tidy Tuesday entry, my first animated plot. Code available in my [GitHub repository](https://github.com/jamesphare/website/blob/master/content/post/2021-04-16-animated-post-offices/index.Rmarkdown).
 
 ![](index_files/figure-html/unnamed-chunk-2-1.gif)<!-- -->
