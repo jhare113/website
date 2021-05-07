@@ -6,6 +6,7 @@ slug: systemic-racism-in-the-nypd
 categories: []
 tags: []
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, cache = TRUE)
 

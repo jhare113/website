@@ -6,6 +6,7 @@ slug: extinct-plants
 categories: []
 tags: []
 ---
+
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 #First load needed libraries and this week's data
