@@ -6,11 +6,6 @@ slug: running-predictor
 categories: []
 tags: []
 ---
----
-title: "Running Predictor"
-date: "June 25, 2020"
-output: github_document
----
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, cache = TRUE)
