@@ -22,4 +22,4 @@ It turns out that---unsurprisingly---Aang speaks more lines in more episodes tha
 
 It seems that Azula's episodes are very well liked while Jet's get the lowest ratings. Generally speaking, episodes that focus on characters who are less central to the series seem to be better liked. Of the major characters, Zuko gets the highest marks while Aang comes in last. 
 
-That's all for now. Take a look at my code on [GitHub](https://github.com/jamesphare/tidytuesday/blob/master/20200811/avatar.rmd).
+That's all for now. Take a look at my code on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2021-04-15-avatar-the-last-airbender/index.Rmarkdown).
