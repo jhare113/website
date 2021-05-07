@@ -16,8 +16,6 @@ library(plotly)
 
 #import data
 income_mean <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-02-09/income_mean.csv')
-#get data from EPI https://www.epi.org/data/#?subject=wagegroup
-income_mean_high <- readr::read_csv('data/epi_wages_data.csv')
 ```
 
 ```{r prepare}
@@ -28,29 +26,6 @@ income_mean <- income_mean %>%
 
 #create data frame for labeling line ends
 data_ends <- income_mean %>% filter(year == 2019)
-
-#tidy data
-income_mean_high <- pivot_longer(income_mean_high, 
-             cols = -"Date", 
-             names_to = "wage_group", 
-             values_to = "income_dollars")
-
-income_mean_high$income_dollars <- parse_number(income_mean_high$income_dollars)
-
-income_mean_high <- income_mean_high %>% 
-        mutate(wage_group = case_when(
-                wage_group == "Upper 0.1% average annual wages" ~ "Top 0.1%",
-                wage_group == "99th-100th average annual wages" ~ "Top 1%",
-                wage_group == "99th-99.9th average annual wages" ~ "99-99.9%",
-                wage_group == "top 5% average annual wages" ~ "Top 5%",
-                wage_group == "95th-99th average annual wages" ~"95-99%",
-                wage_group == "90th-99th average annual wages" ~ "90-99%",
-                wage_group == "90-95th average annual wages" ~ "90-95%",
-                wage_group == "Bottom 90% average annual wages" ~ "Bottom 90%"))
-
-income_mean_high$wage_group <- factor(income_mean_high$wage_group, 
-                                 levels = c("Top 0.1%", "Top 1%", "99-99.9%", "Top 5%",
-                                    "95-99%", "90-99%", "90-95%", "Bottom 90%"))
 ```
 
 For this Tidy Tuesday, I decided to try my hand at interactive visualization.
@@ -129,6 +104,36 @@ ggplotly(income_plot, tooltip = "text") %>%
 ```
 
 Addendum: I was asked on Twitter what this breakdown looked like within the top 5%. This information was not available within this data set, but I found more data from the Economic Policy Institute that allows us to answer this question.
+
+```{r problem2}
+#get data from EPI https://www.epi.org/data/#?subject=wagegroup
+income_mean_high <- readr::read_csv('data/epi_wages_data.csv')
+
+#tidy data
+income_mean_high <- pivot_longer(income_mean_high, 
+             cols = -"Date", 
+             names_to = "wage_group", 
+             values_to = "income_dollars")
+
+income_mean_high$income_dollars <- parse_number(income_mean_high$income_dollars)
+
+income_mean_high <- income_mean_high %>% 
+        mutate(wage_group = case_when(
+                wage_group == "Upper 0.1% average annual wages" ~ "Top 0.1%",
+                wage_group == "99th-100th average annual wages" ~ "Top 1%",
+                wage_group == "99th-99.9th average annual wages" ~ "99-99.9%",
+                wage_group == "top 5% average annual wages" ~ "Top 5%",
+                wage_group == "95th-99th average annual wages" ~"95-99%",
+                wage_group == "90th-99th average annual wages" ~ "90-99%",
+                wage_group == "90-95th average annual wages" ~ "90-95%",
+                wage_group == "Bottom 90% average annual wages" ~ "Bottom 90%"))
+
+income_mean_high$wage_group <- factor(income_mean_high$wage_group, 
+                                 levels = c("Top 0.1%", "Top 1%", "99-99.9%", "Top 5%",
+                                    "95-99%", "90-99%", "90-95%", "Bottom 90%"))
+
+```
+
 
 ```{r visualize2}
 
