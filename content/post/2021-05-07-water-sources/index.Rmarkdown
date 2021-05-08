@@ -19,7 +19,10 @@ water <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidy
 
 ```{r wrangle}
 water_madagascar <- water %>% 
-        filter(country_name == "Madagascar")
+        filter(country_name == "Madagascar",
+               !is.na(water_source) | 
+                       !is.na(installer) | 
+                       !is.na(install_year)) #filter out garbage listings - some in the ocean
 
 #create popup content
 content <- paste(
