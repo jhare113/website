@@ -103,7 +103,13 @@ ggplotly(income_plot, tooltip = "text") %>%
 
 ```
 
-Addendum: I was asked on Twitter what this breakdown looked like within the top 5%. This information was not available within this data set, but I found more data from the Economic Policy Institute that allows us to answer this question.
+Addendum: I was asked on Twitter what this breakdown looked like within the top 5%.
+
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1390289331613540357')
+```
+
+This information was not available within this data set, but I found more data from the Economic Policy Institute that allows us to answer this question.
 
 ```{r problem2}
 #get data from EPI https://www.epi.org/data/#?subject=wagegroup
@@ -133,7 +139,6 @@ income_mean_high$wage_group <- factor(income_mean_high$wage_group,
                                     "95-99%", "90-99%", "90-95%", "Bottom 90%"))
 
 ```
-
 
 ```{r visualize2}
 
@@ -204,4 +209,5 @@ ggplotly(income_plot, tooltip = "text") %>%
         )
 
 ```
+
 The code is available in my [GitHub repository](https://github.com/jamesphare/website/blob/master/content/post/2021-05-06-income-disparities/index.Rmarkdown).
