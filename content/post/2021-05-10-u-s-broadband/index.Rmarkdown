@@ -1,0 +1,106 @@
+---
+title: U.S. Broadband
+author: James P. Hare
+date: '2021-05-10'
+slug: u-s-broadband
+categories: []
+tags: []
+draft: TRUE
+---
+
+```{r setup, include = FALSE}
+
+#load necessary libraries
+library(tidyverse)
+library(urbnmapr)
+library(ggpubr)
+
+#set theme
+theme_set(theme_void())
+
+#Get broadband data
+broadband <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-05-11/broadband.csv', na = "-")
+
+#Get map shape files
+counties_sf <- get_urbn_map("counties", sf = TRUE)
+
+#Get median income estimates from USDA Economic Research Service (converted from Excel to csv using Libre Office)
+median_income <- read_csv("data/median_income.csv")
+```
+
+```{r wrangle, include = FALSE}
+
+#Rename 'COUNTY ID' column to more standard 'fips'
+broadband <- rename(broadband, fips = 'COUNTY ID')
+        
+#convert FIPS from character to double for joining with broadband data
+median_income$fips <- as.double(median_income$fips_txt)
+counties_sf$fips <- as.double(counties_sf$county_fips)
+
+
+#select relevant columns
+median_income <- median_income %>% 
+        select(fips, Median_Household_Income_2019)
+counties_sf <- counties_sf %>% 
+        select(fips, geometry)
+
+#join median income to broadband data
+broadband <- left_join(broadband, median_income)
+
+#join map data
+broadband <- left_join(broadband, counties_sf)
+```
+
+I started out working on this week's [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-05-11/readme.md) by doing some exploratory analysis of the broadband usage data included in this data set. Using linear regression, I modeled the relationship of broadband usage in a county to broadband availability (per the FCC), the poverty rate, median household income, the percentage of Black residents, and the county's rural or urban character. I found that each of these parameters had a statistically significant impact on broadband usage, but when constructing a multivariate model, I found that, of these factors, only broadband availability and median household income explained a significant amount of variance:
+
+```{r model, echo = FALSE}
+mod_income <- lm(`BROADBAND USAGE` ~ `BROADBAND AVAILABILITY PER FCC` + 
+                         Median_Household_Income_2019, broadband)
+summary(mod_income)
+```
+
+In order to visualize this finding, I decided to construct two choropleths, one showing broadband usage by county, the other median income. The similarities between these maps demonstrates the correlation between a county's median household income and its broadband usage.
+
+```{r visualize_usage, echo = FALSE}
+usage_map <- ggplot() +
+        geom_sf(data= broadband, mapping = aes(geometry = geometry, 
+                                     fill = `BROADBAND USAGE`),
+                color = "#ffffff", 
+                size = 0.05) +
+        scale_fill_viridis_c(labels = scales::percent) +
+        theme(legend.position = "left") +
+        labs(fill = "Broadband\nUsage")
+```
+
+```{r visualize_income, echo = FALSE}
+income_map <- ggplot() +
+        geom_sf(data= broadband, mapping = aes(geometry = geometry, 
+                                     fill = `Median_Household_Income_2019`),
+                color = "#ffffff", 
+                size = 0.05) +
+        scale_fill_viridis_c(labels = scales::dollar) +
+        theme(legend.position = "left") +
+        labs(fill = "Median\nHousehold\nIncome")
+```
+
+```{r combine_plots, include = FALSE}
+
+figure <- ggarrange(usage_map, income_map, ncol = 1, nrow = 2)
+
+annotate_figure(figure,
+               top = text_grob("Broadband Usage Follows County's Median Income", 
+                               size = 14),
+               bottom = text_grob("Sources: Microsoft, USDA ERS\njamesphare.org",
+                                  hjust = 1, x = 1, size = 10)
+               )
+
+#save image so I can add alt text
+ggsave("figure.png")
+```
+
+```{r publish_plot, echo = FALSE}
+#use Hugo shortcode to add alt text
+blogdown::shortcode("figure", src = "figure.png", alt = "Two choropleths of the United States showing that a county's broadband usage and its median household income are correlated")
+```
+
+Source code available on [GitHub]().
