@@ -5,10 +5,11 @@ date: '2021-05-10'
 slug: u-s-broadband
 categories: []
 tags: []
-draft: TRUE
 ---
 
-I started out working on this week’s [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-05-11/readme.md) by doing some exploratory analysis of the broadband usage data included in this data set. Using linear regression, I modeled the relationship of broadband usage in a county to broadband availability (per the FCC), the poverty rate, median household income, the percentage of Black residents, and the county’s rural or urban character. I found that each of these parameters had a statistically significant impact on broadband usage, but when constructing a multivariate model, I found that, of these factors, only broadband availability and median household income explained a significant amount of variance:
+This week’s [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-05-11/readme.md) includes data on broadband usage in the United States. I started out with some exploratory analysis of this data set. Using linear regression, I modeled the relationship of broadband usage in a county to broadband availability (per the FCC), the poverty rate, median household income, the percentage of Black residents, and the county’s rural or urban character.
+
+I found that each of these parameters had a statistically significant impact on broadband usage, but when constructing a multivariate model, I found that, of these factors, only broadband availability and median household income explained a significant amount of variance:
 
     ## 
     ## Call:
@@ -36,4 +37,4 @@ In order to visualize this finding, I decided to construct two choropleths, one 
 
 {{% figure src="figure.png" alt="Two choropleths of the United States showing that a county's broadband usage and its median household income are correlated" %}}
 
-Source code available on [GitHub]().
+Source code available on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2021-05-10-u-s-broadband/index.Rmarkdown).
