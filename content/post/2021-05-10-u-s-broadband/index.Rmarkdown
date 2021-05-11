@@ -60,7 +60,7 @@ mod_income <- lm(`BROADBAND USAGE` ~ `BROADBAND AVAILABILITY PER FCC` +
 summary(mod_income)
 ```
 
-In order to visualize this finding, I decided to construct two choropleths, one showing broadband usage by county, the other median income. The similarities between these maps demonstrates the correlation between a county's median household income and its broadband usage.
+In order to visualize this finding, I decided to construct two choropleths, one showing broadband usage by county, the other median income. The similarities between these maps demonstrates the correlation between a county's median household income and its broadband usage. 
 
 ```{r visualize_usage, echo = FALSE}
 usage_map <- ggplot() +
