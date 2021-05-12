@@ -5,7 +5,6 @@ date: '2021-05-12'
 slug: alt-text-in-blogdown
 categories: []
 tags: []
-draft: TRUE
 ---
 
 It’s important to add alt text to images in order to make them accessible to users of screen readers.
@@ -74,4 +73,4 @@ blogdown::shortcode("figure", src = "gapminder_image.jpg", alt = "Bubble chart s
 
 For tips on writing good alt text, check out this [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) from the DataViz Society/Nightingale (via [TidyTuesday](https://github.com/rfordatascience/tidytuesday)).
 
-My source code is available on GitHub. And if there’s a better or easier way to do this, please let me know!
+My source code is available on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2021-05-12-alt-text-in-blogdown/index.Rmarkdown). And if there’s a better or easier way to do this, please let me know!
