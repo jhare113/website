@@ -10,6 +10,4 @@ Prior to moving to Georgia, I spent five years as a project manager at the Rosa 
 
 My educational background is in South Asian religious studies and culminated in a PhD from Columbia University. Read more about my dissertation and scholarly publications on my [research](/research/) page.
 
-You can reach me at james@jamesphare.org. My PGP public key is available on my [contact](/contact/) page.
-
 
