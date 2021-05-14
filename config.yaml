@@ -48,6 +48,11 @@ menu:
       pre: <i class="sidebar-button-icon fa fa-lg fa-user"></i>
       url: /about
       weight: 5
+    - identifier: research
+      name: Research
+      pre: <i class="sidebar-button-icon fa fa-lg fa-area-chart"></i>
+      url: /research
+      weight: 6
   misc:
     - identifier: rss
       name: RSS
