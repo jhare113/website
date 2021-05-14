@@ -30,9 +30,7 @@ data_ends <- income_mean %>% filter(year == 2019)
 
 For this Tidy Tuesday, I decided to try my hand at interactive visualization. This week's data comes from the Urban Institute and includes all sorts of interesting and important demographic data on wealth and income distribution. For the purposes of this visualization, I focused purely on income distribution.
 
-{{% rawhtml %}}
-<post_cut>
-{{% /rawhtml %}}
+<!--more-->
 
 ```{r visualize}
 
@@ -104,7 +102,6 @@ ggplotly(income_plot, tooltip = "text") %>%
                         yref = 'paper', y = -0.3
                 )
         )
-
 ```
 
 Addendum: I was asked on Twitter what this breakdown looked like within the top 5%.
