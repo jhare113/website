@@ -77,8 +77,8 @@ menu:
 params:
   autoThumbnailImage: yes
   clearReading: yes
-  coverImage: "img/stormking.jpg"
-  description: "Stormking Wall"
+  coverImage: "img/sky.jpeg"
+  description: "sunset"
   header:
     rightLink:
       class: ''
