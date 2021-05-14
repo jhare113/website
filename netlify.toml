@@ -1,20 +1,14 @@
 [build]
-  publish = "public"
-  command = "hugo"
-  
+command = "hugo"
+publish = "public"
+[build.environment]
+HUGO_VERSION = "0.83.1"
+
+[context]
+[context.branch-deploy]
+command = "hugo -F -b $DEPLOY_PRIME_URL"
+[context.deploy-preview]
+command = "hugo -F -b $DEPLOY_PRIME_URL"
+[context.production]
 [context.production.environment]
-  HUGO_VERSION = "0.75.1"
-  HUGO_ENV = "production"
-  HUGO_ENABLEGITINFO = "true"
-  
-[context.branch-deploy.environment]
-  HUGO_VERSION = "0.75.1"
-  
-[context.deploy-preview.environment]
-  HUGO_VERSION = "0.75.1"
-  
-[[redirects]]
-  from = "/blog"
-  to = "/"
-  status = 301
-  force = false
+HUGO_ENV = "production"

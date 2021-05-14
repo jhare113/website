@@ -1,0 +1,86 @@
+baseURL: https://example.org/
+languageCode: en-us
+defaultContentLanguage: en-us
+title: "jamesphare.org"
+theme: hugo-tranquilpeak-theme
+disqusShortname:
+paginate: 7
+canonifyurls: yes
+permalinks:
+  post: /:year/:month/:slug/
+taxonomies:
+  archive: archives
+  category: categories
+  tag: tags
+author:
+  bio: Researcher, Writer, Editor, Project Manager
+  gravatarEmail:
+  job: Aspiring Data Scientist
+  location: Decatur, Georgia
+  name: James P. Hare
+  picture: "img/logo.png"
+menu:
+  links:
+    - identifier: github
+      name: GitHub
+      pre: <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      url: https://github.com/jamesphare
+      weight: 1
+    - identifier: twitter
+      name: Twitter
+      pre: <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+      url: https://twitter.com/MousyAesthete
+      weight: 2
+  main:
+    - identifier: home
+      name: Home
+      pre: <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      url: /
+      weight: 1
+    - identifier: archives
+      name: Archives
+      pre: <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      url: /archives
+      weight: 4
+    - identifier: about
+      name: About
+      pre: <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      url: /#about
+      weight: 5
+  misc:
+    - identifier: rss
+      name: RSS
+      pre: <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      url: /index.xml
+      weight: 1
+params:
+  autoThumbnailImage: yes
+  clearReading: yes
+  coverImage: "img/stormking.jpg"
+  description: "Stormking Wall"
+  header:
+    rightLink:
+      class: ''
+      icon: ''
+      url: /#about
+  hierarchicalCategories: no
+  imageGallery: yes
+  sharingOptions:
+    - icon: fa-facebook-official
+      name: Facebook
+      url: https://www.facebook.com/sharer/sharer.php?u=%s
+    - icon: fa-twitter
+      name: Twitter
+      url: https://twitter.com/intent/tweet?text=%s
+    - icon: fa-google-plus
+      name: Google+
+      url: https://plus.google.com/share?url=%s
+  sidebarBehavior: 1
+  syntaxHighlighter: highlight.js
+  thumbnailImage: yes
+  thumbnailImagePosition: bottom
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
