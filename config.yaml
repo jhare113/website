@@ -3,7 +3,7 @@ languageCode: en-us
 defaultContentLanguage: en-us
 title: "jamesphare.org"
 theme: hugo-tranquilpeak-theme
-disqusShortname: hugo-tranquilpeak-theme
+disqusShortname:
 paginate: 7
 canonifyurls: yes
 permalinks:
@@ -13,12 +13,12 @@ taxonomies:
   category: categories
   tag: tags
 author:
-  bio: Super bio with markdown support **COOL**
-  gravatarEmail: thibaud.lepretre@gmail.com
-  job: Your job title
+  bio: Researcher, Writer, Editor, Project Manager
+  gravatarEmail:
+  job: Aspiring Data Scientist
   location: Decatur, Georgia
   name: James P. Hare
-  picture: https://en.wikipedia.org/wiki/Angelus_Novus#/media/File:Klee,_paul,_angelus_novus,_1920.jpg
+  picture: "img/logo.png"
 menu:
   links:
     - identifier: github
@@ -37,16 +37,6 @@ menu:
       pre: <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       url: /
       weight: 1
-    - identifier: categories
-      name: Categories
-      pre: <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-      url: /categories
-      weight: 2
-    - identifier: tags
-      name: Tags
-      pre: <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-      url: /tags
-      weight: 3
     - identifier: archives
       name: Archives
       pre: <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
@@ -57,6 +47,11 @@ menu:
       pre: <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       url: /#about
       weight: 5
+    - identifier: research
+      name: Research
+      pre: <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      url: content/research.md
+      weight: 6
   misc:
     - identifier: rss
       name: RSS
@@ -73,7 +68,7 @@ params:
       class: ''
       icon: ''
       url: /#about
-  hierarchicalCategories: yes
+  hierarchicalCategories: no
   imageGallery: yes
   sharingOptions:
     - icon: fa-facebook-official
@@ -89,3 +84,8 @@ params:
   syntaxHighlighter: highlight.js
   thumbnailImage: yes
   thumbnailImagePosition: bottom
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
