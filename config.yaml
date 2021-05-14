@@ -47,11 +47,6 @@ menu:
       pre: <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       url: /#about
       weight: 5
-    - identifier: research
-      name: Research
-      pre: <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-      url: content/research.md
-      weight: 6
   misc:
     - identifier: rss
       name: RSS
