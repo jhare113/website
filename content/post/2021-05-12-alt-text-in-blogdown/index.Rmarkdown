@@ -11,13 +11,16 @@ It's important to add alt text to images in order to make them accessible to use
 
 I compose this blog using the excellent [blogdown](https://bookdown.org/yihui/blogdown/) package, which enables me to easily include code-generated plots. Yesterday, I decided to finally figure out how to add alt text to these plots. I'm sharing what I learned in order to help others in the R community make their visualizations more accessible and as a reminder to myself.
 
-One way to add alt text to images is to use [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/). In markdown, these codes can be used as is. So `{{%/* figure src="image.jpg" alt="Informative text" */%}}` would render a figure with accompanying alt text in a markdown document.
+For still images, alt text can be added using markdown syntax (or the "insert image" menu option, under "Addins"): `![Informative text](image.jpg)`
+
+![Image of Angelus Novus (New Angel), a 1920 monoprint by Paul Klee](images/angelus_novus.jpg)
+
+Another way to add alt text to images is to use [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/). In markdown, these codes can be used as is. So `{{%/* figure src="image.jpg" alt="Informative text" */%}}` would render a figure with accompanying alt text in a markdown document.
 
 In rmarkdown documents, Hugo shortcodes won't render directly, so it is necessary to use the shortcode function from the blogdown package:
 
-```{r}
-blogdown::shortcode("figure", src = "angelus_novus.jpg", alt = "Image of Angelus Novus (New Angel), a 1920 monoprint by Paul Klee")
-```
+`blogdown::shortcode("figure", src = "image.jpg", alt = "Informative text")
+`
 
 So that works for static images, but how about code-generated plots? In these cases, we can save the output then use the shortcode to display it with an appropriate alt text.
 
@@ -44,11 +47,12 @@ gapminder_image <- ggplot(gapminder) +
         scale_size(labels = scales::comma) +
         scale_x_continuous(labels = scales::dollar)
 
-ggsave("gapminder_image.jpg", plot = gapminder_image)
-
-blogdown::shortcode("figure", src = "gapminder_image.jpg", alt = "Bubble chart showing relationship between countries' per capita GDP and life expectancy in 2007 where there is a strong relationship between these two measurements")
-
+ggsave("images/gapminder_image.jpg", plot = gapminder_image)
 ```
+
+`![Bubble chart showing relationship between countries' per capita GDP and life expectancy in 2007 where there is a strong relationship between these two measurements](images/gapminder_image.jpg)`
+
+![Bubble chart showing relationship between countries' per capita GDP and life expectancy in 2007 where there is a strong relationship between these two measurements](images/gapminder_image.jpg)
 
 For tips on writing good alt text, check out this [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) from the DataViz Society/Nightingale (via [TidyTuesday](https://github.com/rfordatascience/tidytuesday)).
 
