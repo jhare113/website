@@ -45,8 +45,8 @@ menu:
       weight: 4
     - identifier: about
       name: About
-      pre: <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-      url: /#about
+      pre: <i class="sidebar-button-icon fa fa-lg fa-user"></i>
+      url: /about
       weight: 5
   misc:
     - identifier: rss
