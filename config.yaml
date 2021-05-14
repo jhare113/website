@@ -27,11 +27,16 @@ menu:
       pre: <i class="sidebar-button-icon fa fa-lg fa-github"></i>
       url: https://github.com/jamesphare
       weight: 1
+    - identifier: linkedin
+      name: LinkedIn
+      pre: <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      url: https://www.linkedin.com/in/jphare/
+      weight: 2
     - identifier: twitter
       name: Twitter
       pre: <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
       url: https://twitter.com/MousyAesthete
-      weight: 2
+      weight: 3
   main:
     - identifier: home
       name: Home
@@ -48,11 +53,21 @@ menu:
       pre: <i class="sidebar-button-icon fa fa-lg fa-user"></i>
       url: /about
       weight: 5
+    - identifier: writing
+      name: Writing & Editing
+      pre: <i class="sidebar-button-icon fa fa-lg fa-pencil"></i>
+      url: /writing-editing
+      weight: 6
     - identifier: research
       name: Research
-      pre: <i class="sidebar-button-icon fa fa-lg fa-area-chart"></i>
+      pre: <i class="sidebar-button-icon fa fa-lg fa-book"></i>
       url: /research
-      weight: 6
+      weight: 7
+    - identifier: email
+      name: Email
+      pre: <i class="sidebar-button-icon fa fa-lg fa-envelope"></i>
+      url: mailto:james@jamesphare.org
+      weight: 8
   misc:
     - identifier: rss
       name: RSS
