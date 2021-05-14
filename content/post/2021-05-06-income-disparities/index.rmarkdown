@@ -210,4 +210,4 @@ ggplotly(income_plot, tooltip = "text") %>%
 
 ```
 
-The code is available in my [GitHub repository](https://github.com/jamesphare/website/blob/master/content/post/2021-05-06-income-disparities/index.Rmarkdown).
+The code is available in my [GitHub repository](https://github.com/jamesphare/website/blob/master/content/post/2021-05-06-income-disparities/index.rmarkdown).
