@@ -54,7 +54,7 @@ menu:
       url: /about
       weight: 5
     - identifier: writing
-      name: Writing & Editing
+      name: Writing
       pre: <i class="sidebar-button-icon fa fa-lg fa-pencil"></i>
       url: /writing-editing
       weight: 6
