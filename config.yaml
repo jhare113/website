@@ -56,8 +56,8 @@ menu:
 params:
   autoThumbnailImage: yes
   clearReading: yes
-  coverImage: images/cover.jpg
-  description: Hugo tranquilpeak theme demo
+  coverImage: "img/stormking.jpg"
+  description: "Stormking Wall"
   header:
     rightLink:
       class: ''
