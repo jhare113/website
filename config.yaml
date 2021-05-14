@@ -87,15 +87,9 @@ params:
   hierarchicalCategories: no
   imageGallery: yes
   sharingOptions:
-    - icon: fa-facebook-official
-      name: Facebook
-      url: https://www.facebook.com/sharer/sharer.php?u=%s
     - icon: fa-twitter
       name: Twitter
       url: https://twitter.com/intent/tweet?text=%s
-    - icon: fa-google-plus
-      name: Google+
-      url: https://plus.google.com/share?url=%s
   sidebarBehavior: 1
   syntaxHighlighter: highlight.js
   thumbnailImage: yes
