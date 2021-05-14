@@ -28,7 +28,11 @@ income_mean <- income_mean %>%
 data_ends <- income_mean %>% filter(year == 2019)
 ```
 
-For this Tidy Tuesday, I decided to try my hand at interactive visualization.
+For this Tidy Tuesday, I decided to try my hand at interactive visualization. This week's data comes from the Urban Institute and includes all sorts of interesting and important demographic data on wealth and income distribution. For the purposes of this visualization, I focused purely on income distribution.
+
+{{% rawhtml %}}
+<post_cut>
+{{% /rawhtml %}}
 
 ```{r visualize}
 
