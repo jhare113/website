@@ -13,7 +13,7 @@ I compose this blog using the excellent [blogdown](https://bookdown.org/yihui/bl
 
 For still images, alt text can be added using markdown syntax (or the "insert image" menu option, under "Addins"): `![Informative text](image.jpg)`
 
-![Image of Angelus Novus (New Angel), a 1920 monoprint by Paul Klee](images/angelus_novus.jpg)
+![Image of Angelus Novus (New Angel), a 1920 monoprint by Paul Klee. Source: The Israel Museum, Jerusalem](images/angelus_novus.jpg)
 
 Another way to add alt text to images is to use [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/). In markdown, these codes can be used as is. So `{{%/* figure src="image.jpg" alt="Informative text" */%}}` would render a figure with accompanying alt text in a markdown document.
 
