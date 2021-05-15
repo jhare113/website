@@ -35,6 +35,6 @@ I found that each of these parameters had a statistically significant impact on 
 
 In order to visualize this finding, I decided to construct two choropleths, one showing broadband usage by county, the other median income. The similarities between these maps demonstrates the correlation between a county’s median household income and its broadband usage.
 
-{{% figure src="figure.png" alt="Two choropleths of the United States showing that a county's broadband usage and its median household income are correlated" %}}
+<img src="images/figure.png" alt="Two choropleths of the United States showing that a county&#39;s broadband usage and its median household income are correlated" width="100%"/>
 
 Source code available on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2021-05-10-u-s-broadband/index.Rmarkdown).
