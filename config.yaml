@@ -2,7 +2,7 @@ baseurl: https://jamesphare.org/
 languageCode: en-us
 title: James P. Hare
 theme: blackburn
-author: Yoshiharu Yamashita
+author: James P. Hare
 copyright: '&copy; 2021. <a href=https://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA</a>'
 canonifyurls: yes
 paginate: 10
@@ -10,7 +10,7 @@ indexes:
   tag: tags
   topic: topics
 params:
-  brand: jamesphare.org
+  brand:
   dateFormat: 02 Jan 2006
   disqus:
   googleAnalytics: "UA-175878886-1"
