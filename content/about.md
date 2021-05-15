@@ -10,6 +10,4 @@ Prior to moving to Georgia, I spent five years as a project manager at the Rosa 
 
 My educational background is in South Asian religious studies and culminated in a PhD from Columbia University. Read more about my dissertation and scholarly publications on my [research](/research/) page.
 
-My site's logo is Angelus Novus, a 1920 monoprint by Paul Klee. It is licensed under a Creative Commons [Attribution-Share Alike](https://creativecommons.org/licenses/by-sa/3.0/deed.en) license by the Israel Museum, Jerusalem.
-
 

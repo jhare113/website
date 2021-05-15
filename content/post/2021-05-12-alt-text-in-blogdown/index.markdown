@@ -77,7 +77,7 @@ ggsave("images/gapminder_image.jpg", plot = gapminder_image)
 
 `![Bubble chart showing relationship between countries' per capita GDP and life expectancy in 2007 where there is a strong relationship between these two measurements](images/gapminder_image.jpg)`
 
-![Bubble chart showing relationship between countries' per capita GDP and life expectancy in 2007 where there is a strong relationship between these two measurements](images/gapminder_image.jpg)
+<img src="images/gapminder_image.jpg" alt="Bubble chart showing relationship between countries&#39; per capita GDP and life expectancy in 2007 where there is a strong relationship between these two measurements" width="100%"/>
 
 For tips on writing good alt text, check out this [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) from the DataViz Society/Nightingale (via [TidyTuesday](https://github.com/rfordatascience/tidytuesday)).
 
