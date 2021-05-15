@@ -73,7 +73,7 @@ paginate = 10
   github = "jamesphare"
   linkedin = "jphare"
   twitter = "mousyaesthete"
-
+  
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
