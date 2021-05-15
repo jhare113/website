@@ -11,7 +11,6 @@ indexes:
   topic: topics
 params:
   brand: jamesphare.org
-  brand: James P. Hare
   dateFormat: 02 Jan 2006
   disqus:
   googleAnalytics: "UA-175878886-1"
