@@ -17,6 +17,7 @@ params:
   googleAnalytics: "UA-175878886-1"
   highlightjs: androidstudio
   subtitle:
+  custom_css: ["css/my.css"]
 menu:
   main:
     - identifier: home
