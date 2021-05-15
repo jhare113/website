@@ -1,0 +1,34 @@
+{{ partial "header.html" . }}
+
+<div class="header">
+  <h1>{{ .Title }}</h1>
+  <h2>{{ .Description }}</h2>
+</div>
+<div class="content">
+
+  {{ partial "post_meta.html" . }}
+
+  {{ .Content }}
+  
+  {{ partial "share.html" . }}
+
+  {{ partial "prev_next_post.html" . }}
+  
+  {{ partial "commento.html" . }}
+  
+  {{ partial "disqus.html" . }}
+
+  {{ partial "telegram.html" . }}
+
+</div>
+
+<script src="https://utteranc.es/client.js"
+        repo="jamesphare/website"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+{{ partial "footer.html" . }}
