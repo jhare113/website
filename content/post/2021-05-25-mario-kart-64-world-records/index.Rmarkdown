@@ -1,0 +1,17 @@
+---
+title: Mario Kart 64 World Records
+author: James P. Hare
+date: '2021-05-25'
+slug: []
+categories: []
+tags: []
+description: ''
+topics: []
+draft: TRUE
+---
+
+This week's [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-05-25/readme.md) deals with Mario Kart 64 world records. In my exploration of the data, I found that newly discovered shortcuts can lead to massive improvements in world record times. While the records without shortcuts tend to improve very gradually, records with shortcuts can show large, sudden improvements. Here's a plot showing the biggest jumps:
+
+<img src="images/mario_kart.png" alt="Line chart showing Mario Kart 64 world record times in which the discovery of new shortcuts leads to sudden large improvements in record times " width="100%"/>
+
+My source code and data exploration is available on [GitHub]().

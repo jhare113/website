@@ -1,0 +1,200 @@
+---
+title: "R Notebook"
+output:
+  html_notebook: default
+  github_document: default
+---
+
+https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-05-25/readme.md
+
+```{r setup}
+library(tidyverse)
+library(lubridate)
+
+records <-
+        readr::read_csv(
+                'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-05-25/records.csv',
+                col_types = cols(
+                        track = col_character(),
+                        type = col_character(),
+                        shortcut = col_character(),
+                        player = col_character(),
+                        system_played = col_character(),
+                        date = col_date(format = "%Y-%m-%d"),
+                        time_period = col_character(),
+                        time = col_double(),
+                        record_duration = col_double()
+                )
+        )
+drivers <-
+        readr::read_csv(
+                'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-05-25/drivers.csv',
+                col_types = cols(
+                        position = col_double(),
+                        player = col_character(),
+                        total = col_double(),
+                        year = col_date(format = "%Y"),
+                        records = col_double(),
+                        nation = col_character()
+                )
+        )
+```
+
+```{r wrangle}
+records <- records %>% 
+        mutate(shortcut = case_when(shortcut == "Yes" ~ "Shortcut",
+                                    shortcut == "No" ~ "No shortcut"))
+
+drivers <- drivers %>% 
+        select(player, nation) %>% 
+        distinct()
+
+records <- left_join(records, drivers, by = "player")
+
+remove(drivers)
+```
+
+```{r longest_standing}
+#What is the longest standing world record?
+
+longest_standing <- records %>% 
+        group_by(track, type, shortcut) %>% 
+        filter(time == min(time)) %>% #choose only current records
+        arrange(desc(record_duration)) %>% 
+        head(10) %>%
+        mutate("record" = paste(player, track, type, shortcut, system_played, sep = ", "))
+
+ggplot(longest_standing) +
+        geom_col(aes(reorder(record, record_duration), record_duration)) + 
+        coord_flip()
+```
+
+```{r}
+#Which track is the fastest
+fastest_track <- records %>% 
+        group_by(track, type, shortcut) %>%
+        summarize(time = min(time))
+
+#Fastest single lap with shortcut
+fastest_track %>% 
+        filter(shortcut == "Shortcut",
+               type == "Single Lap") %>% 
+ggplot(aes(reorder(track, desc(time)), time)) +
+        geom_col() +
+        coord_flip()
+```
+
+```{r}
+#Fastest single lap without shortcut
+fastest_track %>% 
+        filter(shortcut == "No shortcut",
+               type == "Single Lap") %>% 
+ggplot(aes(reorder(track, desc(time)), time)) +
+        geom_col() +
+        coord_flip()
+```
+```{r}
+#Fastest race with shortcut
+fastest_track %>% 
+        filter(shortcut == "Shortcut",
+               type == "Three Lap") %>% 
+ggplot(aes(reorder(track, desc(time)), time)) +
+        geom_col() +
+        coord_flip()
+```
+
+```{r}
+#Fastest race without shortcut
+fastest_track %>% 
+        filter(shortcut == "No shortcut",
+               type == "Three Lap") %>% 
+ggplot(aes(reorder(track, desc(time)), time)) +
+        geom_col() +
+        coord_flip()
+```
+
+```{r}
+#How did the world records develop over time?
+
+#Full race
+records %>% 
+        filter(type == "Three Lap") %>% 
+ggplot(aes(date, time, color = shortcut)) +
+        geom_line() +
+        facet_wrap(vars(track), scales = "free_y")
+```
+
+```{r}
+#Single Lap
+records %>% 
+        filter(type == "Single Lap") %>% 
+ggplot(aes(date, time, color = shortcut)) +
+        geom_line() +
+        facet_wrap(vars(track), scales = "free_y")
+```
+
+So far, I find the development of full-race world records over time to be the most interesting plot. Let's take some time to improve this plot.
+
+```{r}
+#choose tracks with interesting shortcuts
+interesting_shortcuts <- records %>%
+        filter(
+                type == "Three Lap",
+                shortcut == "Shortcut",
+                track == "Rainbow Road" |
+                        track == "Toad's Turnpike" |
+                        track == "Wario Stadium" |
+                        track == "Yoshi Valley"
+        )
+
+#create text labels
+labels <- interesting_shortcuts %>%
+        group_by(track) %>%
+        mutate("improvement" = time - lag(time)) %>%
+        slice_min(improvement)
+
+plot_label <- paste(
+        sep = "",
+        "Track: ",
+        labels$track,
+        "\n",
+        "Player: ",
+        labels$player,
+        "\n",
+        "Date: ",
+        labels$date,
+        "\n",
+        "Improvement: ",
+        abs(labels$improvement),
+        " seconds"
+)
+
+
+ggplot(interesting_shortcuts, aes(date, time, color = track)) +
+        geom_line() +
+        geom_label_repel(
+                aes(label = plot_label, x = date, y = time),
+                data = labels,
+                seed = 12,
+                size = 3,
+                min.segment.length = 0,
+                show.legend = FALSE,
+                force_pull = 0,
+                max.overlaps = 4
+        ) +
+        scale_y_continuous() +
+        labs(
+                title = "On Some Tracks New Shortcuts Yield Massive Improvements",
+                subtitle = "Mario Kart 64 full-race world records over time",
+                y = "Time in Seconds",
+                x = "Date",
+                caption = "jamesphare.org\nSources: Benedikt Claus, Mario Kart World Records",
+                color = ""
+        ) +
+        theme_gray() +
+        theme(legend.position = "none")
+```
+```{r}
+ggsave("mario_kart.png")
+```
+
