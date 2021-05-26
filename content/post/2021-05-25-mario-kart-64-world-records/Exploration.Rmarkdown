@@ -1,11 +1,11 @@
 ---
-title: "R Notebook"
-output: github_document
+title: Mario Kart 64 Exploration and Code
+author: James P. Hare
+date: "5/26/2021"
 ---
 
-https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-05-25/readme.md
-
 ```{r setup}
+
 library(tidyverse)
 library(lubridate)
 library(ggrepel)
@@ -200,7 +200,3 @@ ggplot(interesting_shortcuts, aes(date, time, color = track)) +
               text = element_text(family = "Press Start 2P",
                                   size = 7))
 ```
-```{r}
-ggsave("mario_kart.png")
-```
-
