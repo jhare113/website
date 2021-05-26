@@ -1,8 +1,6 @@
 ---
 title: "R Notebook"
-output:
-  html_notebook: default
-  github_document: default
+output: github_document
 ---
 
 https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-05-25/readme.md
@@ -10,6 +8,8 @@ https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-05-25/
 ```{r setup}
 library(tidyverse)
 library(lubridate)
+library(ggrepel)
+library(extrafont)
 
 records <-
         readr::read_csv(
@@ -67,6 +67,8 @@ longest_standing <- records %>%
 ggplot(longest_standing) +
         geom_col(aes(reorder(record, record_duration), record_duration)) + 
         coord_flip()
+
+remove(longest_standing)
 ```
 
 ```{r}
@@ -111,6 +113,7 @@ fastest_track %>%
 ggplot(aes(reorder(track, desc(time)), time)) +
         geom_col() +
         coord_flip()
+remove(fastest_track)
 ```
 
 ```{r}
@@ -162,7 +165,7 @@ plot_label <- paste(
         labels$player,
         "\n",
         "Date: ",
-        labels$date,
+        format(labels$date, "%B %d, %Y"),
         "\n",
         "Improvement: ",
         abs(labels$improvement),
@@ -176,11 +179,12 @@ ggplot(interesting_shortcuts, aes(date, time, color = track)) +
                 aes(label = plot_label, x = date, y = time),
                 data = labels,
                 seed = 12,
-                size = 3,
+                size = 2,
                 min.segment.length = 0,
                 show.legend = FALSE,
                 force_pull = 0,
-                max.overlaps = 4
+                max.overlaps = 4,
+                family = "Press Start 2P"
         ) +
         scale_y_continuous() +
         labs(
@@ -191,8 +195,10 @@ ggplot(interesting_shortcuts, aes(date, time, color = track)) +
                 caption = "jamesphare.org\nSources: Benedikt Claus, Mario Kart World Records",
                 color = ""
         ) +
-        theme_gray() +
-        theme(legend.position = "none")
+        theme_minimal() +
+        theme(legend.position = "none",
+              text = element_text(family = "Press Start 2P",
+                                  size = 7))
 ```
 ```{r}
 ggsave("mario_kart.png")
