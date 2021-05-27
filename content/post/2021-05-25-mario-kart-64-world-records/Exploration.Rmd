@@ -175,6 +175,7 @@ plot_label <- paste(
 
 ggplot(interesting_shortcuts, aes(date, time, color = track)) +
         geom_line() +
+        geom_point() +
         geom_label_repel(
                 aes(label = plot_label, x = date, y = time),
                 data = labels,
