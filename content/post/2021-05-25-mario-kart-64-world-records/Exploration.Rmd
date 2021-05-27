@@ -201,3 +201,8 @@ ggplot(interesting_shortcuts, aes(date, time, color = track)) +
               text = element_text(family = "Press Start 2P",
                                   size = 7))
 ```
+
+```{r}
+ggsave("mario_kart.png")
+```
+
