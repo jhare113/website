@@ -1,8 +1,8 @@
----
-title: About
-author: James P. Hare
-date: '2020-08-19'
----
++++
+title = "James P. Hare"
+sidemenu = "true"
+description = "Aspiring Data Scientist and Religious Studies PhD"
++++
 
 I am an aspiring data scientist and religious studies PhD living in Decatur, Georgia. I am an experienced researcher, writer, editor, teacher, and project manager.
 
@@ -10,4 +10,10 @@ Prior to moving to Georgia, I spent five years as a project manager at the [Rosa
 
 My educational background is in South Asian religious studies and culminated in a PhD from Columbia University. Read more about my dissertation and scholarly publications on my [research](/research/) page.
 
+<hr>
 
+## Latest Blog Posts
+
+{{< latest >}}
+
+[All blog posts](/post/)

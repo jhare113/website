@@ -1,0 +1,4 @@
+<!-- code modified from https://github.com/maelle/simplymaelle-->
+{{ range first 3 (where .Site.RegularPages "Type" "post") }}
+    {{ .Render "summary"}}
+  {{ end }}
