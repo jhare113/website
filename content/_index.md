@@ -16,4 +16,4 @@ My educational background is in South Asian religious studies and culminated in 
 
 {{< latest >}}
 
-[All blog posts](/post/)
+<p style="text-align: center;"><a href = "/post/">< All blog posts ></a></p>
