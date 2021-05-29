@@ -1,0 +1,8 @@
+{{ range (where .Site.RegularPages "Type" "post").GroupByDate "2006" }}
+  <h2>{{ .Key }}</h2>
+  <ul>
+  {{ range .Pages }}
+    {{ .Render "li" }}
+  {{ end }}
+  </ul>
+  {{ end }}

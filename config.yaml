@@ -27,9 +27,14 @@ menu:
       weight: 1
     - identifier: post
       name: Posts
-      pre: <i class='fa fa-list fa-fw'></i>
+      pre: <i class='fa fa-sticky-note fa-fw'></i>
       url: /post/
       weight: 2
+    - identifier: archive
+      name: Archive
+      pre: <i class='fa fa-list fa-fw'></i>
+      url: /archive/
+      weight: 3
     - name: Writing
       pre: <i class='fa fa-pen fa-fw'></i>
       url: /writing-editing/
