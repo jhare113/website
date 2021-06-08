@@ -111,5 +111,5 @@ ggplot() +
              x = "Year")
 
 #save image
-ggsave("content/post/2021-06-08-great-lakes-fishing/fishing.png")
+ggsave("content/post/2021-06-08-great-lakes-fishing/images/fishing.png")
 
