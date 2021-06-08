@@ -16,6 +16,6 @@ What did eventually control and then devastate alewife populations were other in
 
 Salmon continue to be stocked in the Great Lakes but without a source of prey, sport fishing on the Great Lakes is likely to decline
 
-<img src="images/visualize-1.png" alt="Line chart showing salmon stocking and alewife production in Lake Michigan. The introduction of salmon had only a modest impact on alewife production, but invasive mussels later caused alewife production to collapse" width="100%"/>
+<img src="images/fishing.png" alt="Line chart showing salmon stocking and alewife production in Lake Michigan. The introduction of salmon had only a modest impact on alewife production, but invasive mussels later caused alewife production to collapse" width="100%"/>
 
 My source code is available on [GitHub](https://github.com/jamesphare/tidy_tuesday/blob/main/2021-06-08_great_lakes_fishing/fishing.md).
