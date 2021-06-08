@@ -1,0 +1,125 @@
+---
+title: "Fishing"
+author: "James P. Hare"
+date: "6/8/2021"
+output: github_document
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<pre class="r"><code>knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+## ✓ tibble  3.1.2     ✓ dplyr   1.0.6
+## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.1</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(hare)
+library(ggrepel)
+
+theme_set(theme_james())
+
+fishing &lt;-
+        readr::read_csv(
+                &#39;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-06-08/fishing.csv&#39;,
+                col_types = cols(
+                        year = col_double(),
+                        lake = col_character(),
+                        species = col_character(),
+                        grand_total = col_double(),
+                        comments = col_character(),
+                        region = col_character(),
+                        values = col_double()
+                )
+        )
+stocked &lt;-
+        readr::read_csv(
+                &#39;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-06-08/stocked.csv&#39;,
+                col_types = cols(
+                        .default = col_character(),
+                        SID = col_double(),
+                        YEAR = col_double(),
+                        MONTH = col_double(),
+                        DAY = col_double(),
+                        LATITUDE = col_double(),
+                        LONGITUDE = col_double(),
+                        GRID = col_double(),
+                        NO_STOCKED = col_double(),
+                        YEAR_CLASS = col_double(),
+                        AGEMONTH = col_double(),
+                        MARK_EFF = col_character(),
+                        TAG_NO = col_character(),
+                        TAG_RET = col_character(),
+                        LENGTH = col_double(),
+                        WEIGHT = col_character(),
+                        CONDITION = col_double(),
+                        VALIDATION = col_double()
+                )
+        )</code></pre>
+<pre class="r"><code>#Let&#39;s tell the story of stocking salmon in Lake Michigan
+stocked_michigan &lt;- stocked |&gt;
+        filter(LAKE == &quot;MI&quot;,
+               SPECIES == &quot;COS&quot; |
+                       SPECIES == &quot;CHS&quot; |
+                       SPECIES == &quot;ATS&quot;) |&gt; #filter to three salmon species
+        group_by(YEAR) |&gt;
+        summarise(stocked = sum(NO_STOCKED))
+
+#Let&#39;s tell the story of alewife production in Lake Michigan
+fish_production &lt;- fishing |&gt;
+        filter(!is.na(values),
+               lake == &quot;Michigan&quot;,
+               species == &quot;Alewife&quot;) |&gt;
+        group_by(year, species) |&gt;
+        summarise(production = sum(values)) |&gt; 
+        #create text labels
+        add_column(label = NA) |&gt;
+        mutate(label = case_when(year == 1988 ~ &quot;Zebra mussels discovered&quot;,
+                                 year == 1966 ~ &quot;Salmon introduced to\ncontrol alewife population&quot;))</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;year&#39;. You can override using the `.groups` argument.</code></pre>
+<pre class="r"><code>#set colors for two line charts
+stocked_color &lt;- &quot;#1a2c42&quot;
+production_color &lt;- &quot;#be2f29&quot;
+
+#set coefficient for bringing two line charts into the same scale
+coeff &lt;- 100
+
+ggplot() +
+        geom_line(data = stocked_michigan,
+                  mapping = aes(YEAR, stocked),
+                  color = stocked_color) +
+        geom_line(
+                data = fish_production,
+                mapping = aes(year, production * coeff),
+                color = production_color
+        ) + #data modified to fit chart scale
+        geom_label_repel(data = fish_production, 
+                         aes(label = label, x = year, y = production * coeff),
+                         seed = 18,
+                         min.segment.length = 0,
+                         box.padding = 1.5,
+                         arrow = arrow(length = unit(0.02, &quot;npc&quot;))) +
+        scale_y_continuous(
+                #create left axis
+                labels = scales::label_comma(),
+                name = &quot;Salmon stocked&quot;,
+                #create right axis
+                sec.axis = sec_axis( ~ . / coeff, #scale modified to match data
+                                     name = &quot;Alewife production (thousands of pounds)&quot;,
+                                     labels = scales::label_comma())
+        ) +
+        theme(
+                axis.title.y = element_text(color = stocked_color),
+                axis.title.y.right = element_text(color = production_color)
+        ) +
+        labs(title = &quot;Salmon Continues to Be Stocked in Lake Michigan&quot;,
+             subtitle = &quot;Alewife production has been devestated by invasive mussels&quot;,
+             caption = &quot;jamesphare.org\nSource: Great Lakes Fishery Commission&quot;,
+             x = &quot;Year&quot;)</code></pre>
+<pre><code>## Warning: Removed 57 rows containing missing values (geom_label_repel).</code></pre>
+<p><img src="/post/2021-06-08-great-lakes-fishing/fishing_files/figure-html/visualize-1.png" width="672" /></p>
