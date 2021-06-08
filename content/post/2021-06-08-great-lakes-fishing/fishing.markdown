@@ -2,13 +2,34 @@
 title: "Fishing"
 author: "James P. Hare"
 date: "6/8/2021"
-output: rmarkdown::github_document
+output: github_document
 ---
 
-```{r setup, include=TRUE}
+
+```r
 knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
+```
+
+```
+## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+```
+
+```
+## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+## ✓ tibble  3.1.2     ✓ dplyr   1.0.6
+## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.1
+```
+
+```
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+```
+
+```r
 library(hare)
 library(ggrepel)
 
@@ -53,7 +74,8 @@ stocked <-
         )
 ```
 
-```{r wrangle}
+
+```r
 #Let's tell the story of stocking salmon in Lake Michigan
 stocked_michigan <- stocked |>
         filter(LAKE == "MI",
@@ -76,7 +98,12 @@ fish_production <- fishing |>
                                  year == 1966 ~ "Salmon introduced to\ncontrol alewife population"))
 ```
 
-```{r visualize}
+```
+## `summarise()` has grouped output by 'year'. You can override using the `.groups` argument.
+```
+
+
+```r
 #set colors for two line charts
 stocked_color <- "#1a2c42"
 production_color <- "#be2f29"
@@ -117,4 +144,10 @@ ggplot() +
              caption = "jamesphare.org\nSource: Great Lakes Fishery Commission",
              x = "Year")
 ```
+
+```
+## Warning: Removed 57 rows containing missing values (geom_label_repel).
+```
+
+<img src="/post/2021-06-08-great-lakes-fishing/fishing_files/figure-html/visualize-1.png" width="672" />
 

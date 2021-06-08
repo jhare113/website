@@ -2,7 +2,7 @@
 title: "Fishing"
 author: "James P. Hare"
 date: "6/8/2021"
-output: rmarkdown::github_document
+output: github_document
 ---
 
 ```{r setup, include=TRUE}
