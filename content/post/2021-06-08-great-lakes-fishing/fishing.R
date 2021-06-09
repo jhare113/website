@@ -98,7 +98,7 @@ ggplot() +
                 name = "Salmon stocked",
                 #create right axis
                 sec.axis = sec_axis( ~ . / coeff, #scale modified to match data
-                                     name = "Alewife production (thousands of pounds)",
+                                     name = "Alewife production (thousands of pounds)\n",
                                      labels = scales::label_comma())
         ) +
         theme(
@@ -108,7 +108,7 @@ ggplot() +
         labs(title = "Salmon Continues to Be Stocked in Lake Michigan",
              subtitle = "Alewife production has been devestated by invasive mussels",
              caption = "jamesphare.org\nSource: Great Lakes Fishery Commission",
-             x = "Year")
+             x = "Year\n")
 
 #save image
 ggsave("content/post/2021-06-08-great-lakes-fishing/images/fishing.png")
