@@ -18,4 +18,3 @@ While exploring the data, I found, unsurprisingly, that formal education and yea
 <img src="images/ask_a_manager.svg" alt="Heat map showing that total compensation tends to increase with more education and more years of experience in a field" width="100%"/>
 
 Source code, in Python this time, available on [GitHub](https://github.com/jamesphare/website/blob/master/content/post/2021-06-11-python/2021_05_18_ask_a_manager.ipynb).
-As usual
