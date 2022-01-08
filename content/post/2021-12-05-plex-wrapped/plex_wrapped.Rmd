@@ -1,0 +1,13 @@
+---
+title: "Plex Wrapped"
+author: "James P. Hare"
+date: "12/5/2021"
+output: github_document
+---
+
+/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/}
+
+```{r}
+
+```
+
