@@ -31,4 +31,4 @@ drawn quiet thing like that.
 
 It's not exactly coherent, but is it less coherent than the original?
 
-My code follows [this tutorial](https://www.tensorflow.org/text/tutorials/text_generation) very closely and is available here.
+My code follows [this tutorial](https://www.tensorflow.org/text/tutorials/text_generation) very closely and is available [here](https://github.com/jamesphare/website/blob/master/content/post/2022-01-08-ulysses-neural-net/Ulysses.ipynb).
