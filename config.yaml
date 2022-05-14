@@ -2,7 +2,7 @@ baseurl: https://jamesphare.org/
 languageCode: en-us
 title: Jamie Hare
 theme: blackburn
-author: James P. Hare
+author: Jamie Hare
 copyright: '&copy; 2021. <a href=https://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA</a>'
 canonifyurls: yes
 paginate: 10
@@ -45,7 +45,7 @@ menu:
       weight: 5
     - name: Email
       pre: <i class='fa fa-envelope fa-envelope'></i>
-      url: mailto:james@jamesphare.org
+      url: mailto:jamie@jamiehare.org
       weight: 6
 social:
   github: jamesphare
