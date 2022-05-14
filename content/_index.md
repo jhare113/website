@@ -1,5 +1,5 @@
 +++
-title = "James P. Hare"
+title = "Jamie Hare"
 sidemenu = "true"
 description = "Decision Scientist and Religious Studies PhD"
 +++
