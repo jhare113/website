@@ -4,7 +4,7 @@ sidemenu = "true"
 description = "Decision Scientist and Religious Studies PhD"
 +++
 
-I am a decision scientist and religious studies PhD living in Decatur, Georgia. I am an experienced researcher, [writer](/writing-editing/), editor, teacher, and project manager. I currently work at an analytics and AI consultancy (all views are my own).
+I am a decision scientist and religious studies PhD living in Decatur, Georgia. I am an experienced researcher, [writer](/writing-editing/), editor, teacher, and project manager.
 
 Prior to moving to Georgia, I spent five years as a project manager at an internationally operating, progressive non-profit institution for civic education. My primary responsibilities concerned socio-ecological transformation, particularly in relationship to the Global South.
 
