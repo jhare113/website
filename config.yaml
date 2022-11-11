@@ -3,7 +3,7 @@ languageCode: en-us
 title: Jamie Hare
 theme: blackburn
 author: Jamie Hare
-copyright: '&copy; 2021. <a href=https://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA</a>'
+copyright: '&copy; 2022. <a href=https://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA</a>'
 canonifyurls: yes
 paginate: 10
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$", "(^|/)renv$", "renv\\.lock$"]
