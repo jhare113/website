@@ -5,7 +5,7 @@ date: '2020-08-19'
 ---
 ## Selected Publications
 
-"['Don’t Say Gay:' Anti-Woke Laws and the Fight Over US Society](https://rosalux.nyc/anti-woke-laws/)," Rosa Luxemburg Stiftung, October 2022.
+"['Don’t Say Gay:' Anti-Woke Laws and the Fight Over US Society](https://rosalux.nyc/anti-woke-laws/)," Rosa Luxemburg Stiftung, October 2022. Also available in [German translation](https://www.rosalux.de/news/id/47781/dont-say-gay).
 
 "[As Goes Georgia: What Is at Stake in the Runoff Elections](https://rosalux.nyc/as-goes-georgia/)," Rosa Luxemburg Stiftung, December 2020. Also available in [German translation](https://rosalux.nyc/de/an-wen-geht-georgia-was-bei-den-stichwahlen-auf-dem-spiel-steht/).
 
